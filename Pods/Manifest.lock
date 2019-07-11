@@ -1,0 +1,20 @@
+PODS:
+  - Amplitude-iOS (4.0.4)
+  - Gimbal (2.80.2)
+
+DEPENDENCIES:
+  - Amplitude-iOS (~> 4.0.4)
+  - Gimbal
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Amplitude-iOS
+    - Gimbal
+
+SPEC CHECKSUMS:
+  Amplitude-iOS: 2ad4d7270c99186236c1272a3a9425463b1ae1a7
+  Gimbal: 6a485183c25493bb0cfdd49e9efe5b011e3648ef
+
+PODFILE CHECKSUM: 018e5fc040bc85e0923078c552232f44db81b5ec
+
+COCOAPODS: 1.7.2
