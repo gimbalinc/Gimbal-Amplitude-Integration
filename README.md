@@ -1,4 +1,4 @@
-# Gimbal iOS Swift Basic Sample
+# Gimbal+Amplitude Adapter
 Minimal Gimbal Integration Example on iOS written in Swift. After setting up your application, place(s) and communication(s) using the Gimbal Manager the code below will yield **Place Events** and **Local Notifications**.
 
 ## Before you create your iOS application
