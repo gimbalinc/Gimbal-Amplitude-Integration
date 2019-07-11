@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		55550EAC12A5D845F018DD2B /* Pods_hello_gimbal_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3E4B81B9D8CD2C8C16D0A /* Pods_hello_gimbal_swift.framework */; };
+		5D14C5F422D74F1B00D3DC17 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14C5F322D74F1B00D3DC17 /* File.swift */; };
 		5DBA5A7A22C0623000B123BC /* nullisland.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5DBA5A7922C0623000B123BC /* nullisland.gpx */; };
 		74E354A21B4EF71C00356163 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E354A11B4EF71C00356163 /* AppDelegate.swift */; };
 		74E354A41B4EF71C00356163 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E354A31B4EF71C00356163 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		11A3E4B81B9D8CD2C8C16D0A /* Pods_hello_gimbal_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hello_gimbal_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D14C5F322D74F1B00D3DC17 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		5DBA5A7922C0623000B123BC /* nullisland.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nullisland.gpx; sourceTree = "<group>"; };
 		613E99615FD88B3838BC37B2 /* Pods-hello-gimbal-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hello-gimbal-swift.debug.xcconfig"; path = "Target Support Files/Pods-hello-gimbal-swift/Pods-hello-gimbal-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		721BE82781B4A9C48B2573BC /* Pods-hello-gimbal-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hello-gimbal-swift.release.xcconfig"; path = "Target Support Files/Pods-hello-gimbal-swift/Pods-hello-gimbal-swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				74E354A11B4EF71C00356163 /* AppDelegate.swift */,
+				5D14C5F322D74F1B00D3DC17 /* File.swift */,
 				74E354A31B4EF71C00356163 /* ViewController.swift */,
 				74E354CE1B4F076300356163 /* GimbalObjectiveCBridgingHeader.h */,
 				74E354A51B4EF71C00356163 /* Main.storyboard */,
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74E354A41B4EF71C00356163 /* ViewController.swift in Sources */,
+				5D14C5F422D74F1B00D3DC17 /* File.swift in Sources */,
 				74E354A21B4EF71C00356163 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

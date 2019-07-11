@@ -1,26 +1,36 @@
 # Gimbal+Amplitude Adapter
-Minimal Gimbal Integration Example on iOS written in Swift. After setting up your application, place(s) and communication(s) using the Gimbal Manager the code below will yield **Place Events** and **Local Notifications**.
+Integration Example on iOS written in Swift. This integration works as a drop-in class that starts both SDKs and logs location events in Amplitude as they occur in the Gimbal SDK.
 
 ## Before you create your iOS application
 Using the **Gimbal Manager**:
 [https://manager.gimbal.com/](https://manager.gimbal.com/)
 - create your Gimbal account 
-- create an **Application** using bundle ID **com.gimbal.hello-gimbal-ios** (generates you API KEY)
+- create an **Application** and assign a bundle ID (generates you API KEY)
 - create at least one **Place** (using a Beacon or Geofence) you can buy Beacons here [http://store.gimbal.com/](http://store.gimbal.com/)
-- create at least one **Communicate** (used for the local notification)
 - download the latest V2 SDK
 
-## Installing Dependencies
+## Installing Gimbal & Amplitude Dependencies
 We use cocoapods to manage dependencies [https://cocoapods.org/](https://cocoapods.org)
 - run the command **sudo gem install cocoapods** (if you do not already have cocoapods installed)
 - cd to the directory where you have cloned this project
+- configure your pod file by adding 'pod Gimbal' and pod 'Amplitude-iOS', '~> 4.0.4'
 - run the command **pod install**
-- open **hello-gimbal-ios-swift.xcworkspace** (not the .xcodeproj file)
+- open the **.xcworkspace** project file (not the .xcodeproj file)
 
-## In the sample iOS application
-- fill your API KEY into ViewController.swift
-- add the Gimbal.framework from the SDK zip you downloaded
-- to enable Gimbal to operate in the background set your application to **'Uses Bluetooth LE accessories'** background mode 
+## Starting the adapter
+- Add GimbalAmplitudeAdapter.swift to your project
+- In GimbalAmplitudeAdapter.swift call: `GimbalAmplitudeAdapter.shared.start(gimbalApiKey: "INSERT API KEY HERE", amplitudeApiKey: "INSERT API KEY HERE")`
+- fill your API KEY for both Gimbal and Amplitude
+- In .AppDelegate, call `restore` during `didFinishLaunchingWithOptions`:
+
+```
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+
+   GimbalAdapter.shared.restore()
+
+   ...
+}
+```
 
 Full Gimbal Docs [http://docs.gimbal.com/](http://docs.gimbal.com/)
 

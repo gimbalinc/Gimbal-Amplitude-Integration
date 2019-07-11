@@ -1,5 +1,6 @@
 import UIKit
 import UserNotifications
+import Amplitude_iOS
 
 @available(iOS 10.0, *)
 @UIApplicationMain
@@ -13,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = self as UNUserNotificationCenterDelegate
+        
+        Amplitude.instance()?.initializeApiKey("106bb70e16a87d37ba195ad66004d7bf")
     
         return true
     }

@@ -1,4 +1,7 @@
 import UIKit
+import Amplitude_iOS
+
+let project = Amplitude.instance()
 
 class ViewController: UITableViewController, GMBLPlaceManagerDelegate, GMBLCommunicationManagerDelegate {
     
@@ -16,12 +19,23 @@ class ViewController: UITableViewController, GMBLPlaceManagerDelegate, GMBLCommu
         self.communicationManager.delegate = self
         
         Gimbal.start()
+        
     }
     
     func placeManager(_ manager: GMBLPlaceManager!, didBegin visit: GMBLVisit!) -> Void {
         NSLog("Begin %@", visit.place.description)
         self.placeEvents.insert(visit, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with:UITableView.RowAnimation.automatic)
+        
+        
+//        let eventProperties: [AnyHashable: Any]! = [
+//            "Place ID": visit.place.identifier,
+//            "Place Name": visit.place.name,
+//            "Place Dwell": visit?.dwellTime
+//        ]
+//
+//        Amplitude.instance()?.logEvent("Try again", withEventProperties: eventProperties)
+        
     }
     
     func placeManager(_ manager: GMBLPlaceManager!, didEnd visit: GMBLVisit!) -> Void {
