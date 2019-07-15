@@ -15,8 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = self as UNUserNotificationCenterDelegate
         
-        Amplitude.instance()?.initializeApiKey("106bb70e16a87d37ba195ad66004d7bf")
-    
         return true
     }
     

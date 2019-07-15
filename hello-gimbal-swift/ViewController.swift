@@ -5,41 +5,25 @@ let project = Amplitude.instance()
 
 class ViewController: UITableViewController, GMBLPlaceManagerDelegate, GMBLCommunicationManagerDelegate {
     
-    var placeManager: GMBLPlaceManager!
     var communicationManager: GMBLCommunicationManager!
     var placeEvents : [GMBLVisit] = []
     
     override func viewDidLoad() -> Void {
-        Gimbal.setAPIKey("9ba83075-1e40-46c9-805a-32c3b4a7bf75", options: nil)
-        
-        placeManager = GMBLPlaceManager()
-        self.placeManager.delegate = self
         
         communicationManager = GMBLCommunicationManager()
         self.communicationManager.delegate = self
         
-        Gimbal.start()
-        
+        GimbalAmplitudeAdapter.shared.delegate = self
+        GimbalAmplitudeAdapter.shared.start(gimbalApiKey: "ADD GIMBAL API KEY HERE", ampltiudeApiKey: "ADD AMPLITUDE API KEY HERE")
+
     }
     
     func placeManager(_ manager: GMBLPlaceManager!, didBegin visit: GMBLVisit!) -> Void {
-        NSLog("Begin %@", visit.place.description)
         self.placeEvents.insert(visit, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with:UITableView.RowAnimation.automatic)
-        
-        
-//        let eventProperties: [AnyHashable: Any]! = [
-//            "Place ID": visit.place.identifier,
-//            "Place Name": visit.place.name,
-//            "Place Dwell": visit?.dwellTime
-//        ]
-//
-//        Amplitude.instance()?.logEvent("Try again", withEventProperties: eventProperties)
-        
     }
     
     func placeManager(_ manager: GMBLPlaceManager!, didEnd visit: GMBLVisit!) -> Void {
-        NSLog("End %@", visit.place.description)
         self.placeEvents.insert(visit, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.automatic)
     }
